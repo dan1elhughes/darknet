@@ -42,8 +42,12 @@ async function main() {
 
     if (intersection.size > 0) {
       console.log("-> keep: ", Array.from(intersection).join());
-      fs.rename(file, path.join(keep, f));
-      console.log("-> ", path.join(keep, f));
+      try {
+        fs.rename(file, path.join(keep, f));
+        console.log("-> ", path.join(keep, f));
+      } catch (e) {
+        console.error(e);
+      }
       continue;
     }
 
