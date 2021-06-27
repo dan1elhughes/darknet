@@ -1,0 +1,27 @@
+{
+  "name": "darknet",
+  "version": "1.0.0",
+  "description": "![Darknet Logo](http://pjreddie.com/media/files/darknet-black-small.png)",
+  "main": "keep-if-bird.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dan1elhughes/darknet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dan1elhughes/darknet/issues"
+  },
+  "homepage": "https://github.com/dan1elhughes/darknet#readme",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "tempy": "^1.0.1"
+  }
+}
