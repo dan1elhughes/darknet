@@ -32,9 +32,9 @@ async function main() {
   console.log(`${files.length} files to process.`);
 
   for (const f of files) {
-    console.log(`Processing: ${f}`);
     const file = path.join(input, f);
 
+    console.log(`Processing: ${file}`);
     const detectedLabels = await getLabels(file);
     const detectedLabelsSet = new Set(detectedLabels.map((l) => l.label));
 
