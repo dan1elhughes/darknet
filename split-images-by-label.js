@@ -58,7 +58,7 @@ async function main() {
 
 async function getLabels(inputFile, threshold = 0.05) {
   return new Promise((resolve) => {
-    const child = childProcess.spawn("./darknet", [
+    const child = childProcess.spawn(path.join(__dirname, "darknet"), [
       "detect",
       "cfg/yolov3.cfg",
       "yolov3.weights",
