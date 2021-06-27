@@ -48,7 +48,9 @@ async function main() {
 
     console.log("-> trash");
     if (trashWithLabels) {
-      const filename = [...detectedLabelsSet, f].join("-").replace(/ /g, "-");
+      const filename = [f, ...detectedLabelsSet, f]
+        .join("-")
+        .replace(/ /g, "-");
       fs.rename(file, path.join(trash, filename));
     } else {
       fs.rename(file, path.join(trash, f));
