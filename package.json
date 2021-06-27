@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/dan1elhughes/darknet#readme",
   "dependencies": {
+    "fs-extra": "^10.0.0",
     "minimist": "^1.2.5",
     "tempy": "^1.0.1"
   }

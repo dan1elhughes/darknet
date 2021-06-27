@@ -6,6 +6,7 @@ const { promises: fs } = require("fs");
 const assert = require("assert");
 const path = require("path");
 const argv = require("minimist")(process.argv.slice(2));
+const fse = require("fs-extra");
 
 const tap = (fn) => (x) => {
   fn(x);
@@ -43,7 +44,7 @@ async function main() {
     if (intersection.size > 0) {
       console.log("-> keep: ", Array.from(intersection).join());
       try {
-        fs.rename(file, path.join(keep, f));
+        fse.move(file, path.join(keep, f));
         console.log("-> ", path.join(keep, f));
       } catch (e) {
         console.error(e);
@@ -56,9 +57,9 @@ async function main() {
       const filename = [f, ...detectedLabelsSet, f]
         .join("-")
         .replace(/ /g, "-");
-      fs.rename(file, path.join(trash, filename));
+      fse.move(file, path.join(trash, filename));
     } else {
-      fs.rename(file, path.join(trash, f));
+      fse.move(file, path.join(trash, f));
     }
   }
 }
